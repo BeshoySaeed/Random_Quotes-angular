@@ -1,0 +1,175 @@
+<div class="container-fluid register">
+  <form class="row g-3" [formGroup]="form" (ngSubmit)="submittedForm()">
+    <div class="col-md-6 mb-3">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter email"
+        name="name"
+        formControlName="emailC"
+      />
+      <div class="error" [hidden]="this.form.get('emailC')?.untouched">
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('emailC')?.errors?.['required'] "
+        >
+          required
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('emailC')?.errors?.['email'] "
+        >
+          invalid email
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="inputPassword4"
+        formControlName="passC"
+      />
+
+      <div class="errors" [hidden]="this.form.get('passC')?.untouched">
+        <p
+          *ngIf="this.form.get('passC')?.errors?.['required']"
+          class="text-danger"
+        >
+          Required
+        </p>
+        <p
+          *ngIf="this.form.get('passC')?.errors?.['minlength']"
+          class="text-danger"
+        >
+          minimum letters 3
+        </p>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="1234 Main St"
+        formControlName="addressC"
+      />
+
+      <div class="errorrs" [hidden]="this.form.get('addressC')?.untouched">
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('addressC')?.errors?.['required']"
+        >
+          Required
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('adressC')?.errors?.['pattern']"
+        >
+          invalid address
+        </p>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="Apartment, studio, or floor"
+        formControlName="addressC2"
+      />
+      <div class="errorrs" [hidden]="this.form.get('addressC2')?.untouched">
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('addressC2')?.errors?.['required']"
+        >
+          Required
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('adressC2')?.errors?.['pattern']"
+        >
+          invalid address
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="inputCity" class="form-label">City</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        formControlName="cityC"
+      />
+      <div class="errorrs" [hidden]="this.form.get('cityC')?.untouched">
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('cityC')?.errors?.['required']"
+        >
+          Required
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('cityC')?.errors?.['pattern']"
+        >
+          invalid address
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="inputState" class="form-label">State</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputState"
+        formControlName="stateC"
+      />
+      <div class="errorrs" [hidden]="this.form.get('stateC')?.untouched">
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('stateC')?.errors?.['required']"
+        >
+          Required
+        </p>
+      </div>
+    </div>
+    <div class="col-md-2 mb-3">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputZip"
+        formControlName="zipC"
+      />
+      <div class="errorrs" [hidden]="this.form.get('zipC')?.untouched">
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('zipC')?.errors?.['required']"
+        >
+          Required
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="this.form.get('zipC')?.errors?.['pattern']"
+        >
+          must be numbers
+        </p>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Check me out </label>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+        Sign in
+      </button>
+    </div>
+  </form>
+</div>

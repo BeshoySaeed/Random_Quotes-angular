@@ -1,0 +1,33 @@
+<div class="Container text-white">
+  <div class="content-describe text-center mt-5">
+    <button
+      type="button"
+      class="btn btn-light btn-sm rounded-pill d-block mx-auto my-3 px-3"
+      (click)="save(Random, author)"
+    >
+      Save Quote
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger btn-sm rounded-pill"
+      (click)="prev()"
+    >
+      Random Quote
+    </button>
+  </div>
+
+  <div class="show text-center my-4 fw-bold">
+    <p text-white>{{ Random }}</p>
+    <p>
+      BY : <span class="text-danger h4 fw-bold"> {{ author }} </span>
+    </p>
+  </div>
+  <div
+    class="alert alert-success mx-auto w-50 text-center rounded-pill"
+    style="transition: 0.3s"
+    role="alert"
+    *ngIf="alertCondition"
+  >
+    Save the quote successfully
+  </div>
+</div>

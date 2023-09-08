@@ -1,0 +1,22 @@
+<div class="container-fluid myQuotes">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Quote number</th>
+        <th>Quote</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container
+        *ngFor="let item of myQuotes; let i = index; trackBy: track"
+      >
+        <tr class="table-active">
+          <td>{{ item.id }}</td>
+          <td>{{ item.quote }}</td>
+          <td>{{ item.author }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
